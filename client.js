@@ -1,6 +1,6 @@
 String.prototype.ellipsis = function(length, add) {
   return this.substring(0, length) + (this.length && add > length ? add : "");
-}
+};
 
 String.prototype.mustache = function(data) {
   var temp = this;
@@ -10,7 +10,7 @@ String.prototype.mustache = function(data) {
     temp = temp.replace(token, data[token.slice(2, -2)] || "");
   }
   return temp;
-}
+};
 
 $(function() {
 
@@ -50,7 +50,7 @@ $(function() {
   ui.reset = $("#reset-default");
   ui.filter = $("#available-filter");
 
-  var temp = {}
+  var temp = {};
   temp.button = $("#button-template").html();
   temp.installed = $("#installed-temp").html();
   temp.available = $("#available-temp").html();
@@ -112,7 +112,7 @@ $(function() {
   });
 
   ui.first.on("change", function(ev) {
-    updateFirst($(this).prop("checked") ? true : false)
+    updateFirst($(this).prop("checked") ? true : false);
     return false;
   });
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+    <ShortName>QwickUp</ShortName>
+    <Description>QwickUp</Description>
+    <InputEncoding>UTF-8</InputEncoding>
+    <Image width="16" height="16" type="image/x-icon">http://qwickup.com/favicon.ico</Image>
+    <Url type="text/html" method="GET" template="http://qwickup.com/">
+        <Param name="ap" value="ffsb" />
+        <Param name="query" value="{searchTerms}" />
+    </Url>
+    <Url type="application/opensearchdescription+xml" rel="self" template="http://qwickup.com/static/search.xml" />
+    <moz:SearchForm>http://qwickup.com/</moz:SearchForm>
+    <!-- <Url type="application/x-suggestions+json" template="suggestionURL" /> -->
+</OpenSearchDescription>

@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+  <title>QwickUp</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="description" content="Access all your favorite dictionaries in one place." />
+  <meta name="viewport" content="width=device-width; initial-scale=1;" />
+  <meta name="keywords" content="quickup, dictionary, lookup, online, quick, free, word, english, language, vocabulary, learning" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/ico" />
+  <meta property="og:title" content="QwickUp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://qwickup.com/" />
+  <meta property="og:image" content="http://qwickup.com/logo.png" />
+  <meta property="og:site_name" content="QwickUp" />
+  <meta property="fb:app_id" content="" />
+  <link rel="search" type="application/opensearchdescription+xml" title="QwickUp" href="search.xml" />
+  <!-- 
+  <link rel="stylesheet/less" href="styles.less" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.0/less.min.js"></script>
+  -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="body">
+  <div class="hideonjs" style="border: none 0; margin: 20px; width: 200px;">
+      Loading...
+  </div>
+  <table id="layout" class="showonjs layout home" style="display: none;"><tr><td class="layout-top">
+  <div class="layout-inner">
+    <form onsubmit="return false;" id="lookup-form" class="lookup-form" autocomplete="off">
+      <div class="bluebar"><div class="center">
+        <span class="logo"><a href="/">QwickUp</a></span>
+        <input class="auto" type="submit" style="border: 0 none; padding: 0; margin: 0; background: none; width: 0px; height: 0px" /><!-- display:none disables it -->
+        <span class="query">
+          <input autocomplete="off" type="text" name="query" id="query" value=""/>
+          <span class="pluginbox">
+            <span class="qwickup_hide_on_ext">
+              +<a href="https://addons.mozilla.org/en-US/firefox/addon/qwickup/" target="_blank">Firefox</a>&nbsp;&nbsp;
+              +<a href="https://chrome.google.com/webstore/search-extensions/koeminkhhagalodjcdibbaopghhignip" target="_blank">Chrome</a>&nbsp;&nbsp;
+            </span>
+          </span>
+        </span>
+      </div></div>
+      <div class="graybar"><div class="center">
+        <div id="btns-out" class="btns-out">
+            <input title="Use first as default." class="first" type="checkbox"/>
+            <span id="btns-in" class="btns-in"></span>
+            <span><input class="btn customize" title="Customize" type="submit" value="&nbsp;&nbsp;&nbsp;" /></span>
+        </div>
+      </div></div>
+    </form>
+    <div class="center">
+      <div id="more" class="more">      
+        <div>
+        <table style="width: 100%;"><tr><td style="width: 48%;">
+        <div style="padding: 10px 0;">
+          <table><tr><td>
+            <input class="first" type="checkbox"/>
+          </td><td>
+            &nbsp;&nbsp;<label for="first">Use first as default.</label>
+          </td></tr></table>
+        </div>
+        <div class="provider" style="padding: 0; margin: 0;"></div>
+        <div id="installed-list" class="installed-list"></div>
+        <br />
+        <a id="reset-default" href="javascript:void(0);">Reset</a>
+        </td><td style="width: 5%;"></td><td style="width: 44%;">
+        
+        <div style="padding: 10px 0;">
+        Show:
+        <select id="available-filter">
+        <option value="all">All</option>
+        <option value="multi">Multi-language</option>
+        <option value="en">English</option>
+        <option value="fr">French</option>
+        <option value="it">Italian</option>
+        <option value="term">Terminology</option>
+        </select>
+        </div>
+        <div class="provider" style="padding: 0; margin: 0;"></div>
+        <div id="available-list" class="available-list"></div>
+        </td></tr></table>
+        </div>
+        <div style="clear: both;"></div>
+        <br />
+        <div class="note">
+            <!--Use drag and drop to reorder your list.<br /> -->
+            A lookup services we should add? Tell us about it.
+        </div>
+      
+      </div>
+      <div class="bottom">
+        <div>
+          <span class="pluginbox">
+            Add to
+            <a href="https://addons.mozilla.org/en-US/firefox/addon/qwickup/" target="_blank">Firefox</a>
+            &middot; <a href="https://chrome.google.com/webstore/search-extensions/koeminkhhagalodjcdibbaopghhignip" target="_blank">Chrome</a>
+          </span>
+        </div>
+        <div class="footer">
+          <div>QwickUp &copy; 2014 &middot; hello@qwickup.com &middot; <a target="_blank" href="http://twitter.com/qwickup">twitter/qwickup</a> &middot; <a target="_blank" href="http://facebook.com/qwickup">facebook/qwickup</a></div>
+        </div>
+        <div class="likebox" style="margin-top: 2em;">
+          <iframe id="fb-bottom" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:20px;" allowTransparency="true"></iframe>
+          <a href="https://twitter.com/QwickUp" class="twitter-follow-button"  data-show-screen-name="false" > </a>
+          <iframe id="github" height="20" width="100" frameborder="0" scrolling="0" style="width:100px; height: 20px;" allowTransparency="true"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  </td></tr><tr><td class="layout-bottom">
+    <iframe name="result" frameborder="0" id="result" class="result" src="empty.html" style="display: none"></iframe>
+  </td></tr></table>
+  
+  <div id="installed-temp" style="display: none;">
+    <div class="provider remove-prov" data-id="{{id}}">
+      <span class="action"><a class="uninstall" href='javascript:void(0);'>-</a></span>
+      <div class="dnd-handle provider-title">{{title}}</div>
+      <span class="provider-about">{{about}}</span>
+    </div>
+  </div>
+  <div id="available-temp" style="display: none;">
+    <div class="provider add-prov all {{tags}}" data-id="{{id}}">
+      <span class="action"><a class="install" href='javascript:void(0);'>+</a></span>
+      <div>
+        <span class="provider-title">{{title}}</span>
+        <span class="provider-about">{{about}}</span>
+      </div>
+    </div>
+  </div>
+  <span id="button-template" style="display: none;">
+    <span data-id="{{id}}">
+      <input type="submit" class="btn lookup" id="{{id}}" value="{{title}}"/>
+    </span>
+  </span>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  
+  <script src="./js/purl.min.js"></script>
+  
+  <script src="providers.js"></script>
+  <script src="client.js"></script>
+  
+  <script type="text/javascript">
+  if (true) {
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33172097-1']);
+    _gaq.push(['_trackPageview']);
+    loadScript(('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js', true);
+
+    document.getElementById('fb-bottom').src = 
+      "//www.facebook.com/plugins/like.php?href=http://www.facebook.com/pages/QwickUp/440943055951066/&send=false&layout=button_count&show_faces=false&font&action=like&width=90&height=20";
+    
+    document.getElementById('github').src = 
+      "http://ghbtns.com/github-btn.html?user=shakiba&repo=qwickup&type=watch&count=true";
+    
+    loadScript("//platform.twitter.com/widgets.js", true);
+  }
+  
+  function loadScript(url, async) {
+    var el = document.createElement('script');
+    var els = document.getElementsByTagName('script');
+    el.type = 'text/javascript';
+    el.async = async ? true : false;
+    el.src = url;
+    els[0].parentNode.insertBefore(el, els[0]);
+  }
+  </script>
+</body>
+</html>

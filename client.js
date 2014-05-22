@@ -243,8 +243,8 @@ $(function() {
   uiProviders();
   uiFirst();
 
-  $(".showonjs").show();
-  $(".hideonjs").hide();
+  $(".showonready").show();
+  $(".hideonready").hide();
 
   Hash.bind(function() {
     var hash = Hash.get();

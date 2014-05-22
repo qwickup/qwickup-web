@@ -57,14 +57,6 @@ $(function() {
 
   var lastCode = null;
 
-  ui.form.on("click", "input.auto", function(ev) {
-    lookup(null, null);
-  });
-
-  ui.form.on("click", "input.lookup", function(ev) {
-    lookup(this.id, null);
-  });
-
   function lookup(code, query) {
     console.log("lookup: " + code + " " + query);
 
@@ -106,6 +98,14 @@ $(function() {
     document.title = (query ? query.ellipsis(12, '...') + " - " : "")
         + "QwickUp";
   }
+
+  ui.form.on("click", "input.auto", function(ev) {
+    lookup(null, null);
+  });
+
+  ui.form.on("click", "input.lookup", function(ev) {
+    lookup(this.id, null);
+  });
 
   ui.form.on("click", "input.customize", function(ev) {
     ui.layout.addClass("page").removeClass("home lookup");

@@ -130,6 +130,10 @@ table,input {
 
 .layout-top {
 	vertical-align: top;
+	.lookup & {
+		position: relative;
+		border-bottom: 1px solid #ddd;
+	}
 }
 
 .layout-bottom {
@@ -140,13 +144,6 @@ table,input {
   .home &,.page & {
     display: none;
   }
-}
-
-.layout-inner {
-	.lookup & {
-		position: relative;
-		border-bottom: 1px solid #ddd;
-	}
 }
 
 .lookup-form {
@@ -248,7 +245,7 @@ table,input {
 	& a {
 		color: #ffffff;
 	}
-	& .pluginbox {
+	& .addto {
 		margin: 0 5px;
 		.home &,.page & {
 			display: none;
@@ -317,16 +314,15 @@ table,input {
 }
 
 .bottom {
-	margin: 30px 0 150px;
+	margin: 50px 0 150px;
 	color: #999999;
 	white-space: nowrap;
-
+	line-height: 20px;
 	.lookup & {
 		display: none;
 	}
-	
-	.lookup & div {
-		margin: 0 0 0 5px;
+	.social {
+	  margin-top: 30px;
 	}
 }
 
@@ -497,7 +493,7 @@ table,input {
 
 @media screen and (max-width: 700px) {	
   .lookup .bluebar {
-    .pluginbox { display: none; }
+    .addto { display: none; }
   }
 }
 @media screen and (max-width: 600px) {	

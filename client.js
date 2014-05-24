@@ -1,5 +1,9 @@
-String.prototype.ellipsis = function(length, add) {
-  return this.substring(0, length) + (this.length && add > length ? add : "");
+String.prototype.ellipsis = function(length, ellipsis) {
+  if (length > 0 && this.length > length) {
+    return this.substr(0, length) + (ellipsis || "…");
+  } else {
+    return this;
+  }
 };
 
 String.prototype.mustache = function(data) {
@@ -95,8 +99,7 @@ $(function() {
 
     ui.query.val(query);
 
-    document.title = (query ? query.ellipsis(12, '...') + " - " : "")
-        + "QwickUp";
+    document.title = (query ? query.ellipsis(12) + " - " : "") + "QwickUp";
   }
 
   ui.form.on("click", "input.auto", function(ev) {

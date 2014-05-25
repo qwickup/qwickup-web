@@ -27,7 +27,7 @@ html,body {
 	height: 100%;
 	font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
 	font-size: 14px;
-	line-height: 1.4em;
+	line-height: 1.4;
 	color: #333;
 	background: #fff;
 }
@@ -90,7 +90,7 @@ table,input {
 }
 
 .lookup-form {
-	line-height: 1em;
+	line-height: 1;
 }
 
 .result {
@@ -395,7 +395,7 @@ table,input {
 
 .note {
 	margin: 10px 3px;
-	line-height: 1.4em;
+	line-height: 1.4;
 	color: #777;
 }
 

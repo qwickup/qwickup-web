@@ -20,8 +20,8 @@ $(function() {
 
   var userdata = {
     first : false,
-    providers : providers.defaults,
-    getFirst : function() {
+    providers : providers.defaults.slice(),
+    firstId : function() {
       return this.first && this.providers[0];
     },
     load : function() {
@@ -64,7 +64,7 @@ $(function() {
   function lookup(code, query) {
     console.log("lookup: " + code + " " + query);
 
-    lastCode = code = code || lastCode || userdata.getFirst() || "";
+    lastCode = code = code || lastCode || userdata.firstId() || "";
     query = query || ui.query.val() || "";
 
     console.log("lookup*: " + code + " " + query);
@@ -115,7 +115,7 @@ $(function() {
   });
 
   ui.first.on("change", function(ev) {
-    updateFirst($(this).prop("checked") ? true : false);
+    setFirst($(this).prop("checked") ? true : false);
     return false;
   });
 
@@ -127,12 +127,17 @@ $(function() {
 
   ui.installed.on("click", "a.uninstall", function(ev) {
     var id = $(this).closest(".provider").attr("data-id");
-    id && removeProvider(id);
+    var provider = providers[id];
+    if (!provider || window.confirm("Remove '" + provider.title + "'?")) {
+      removeProvider(id);
+    }
     return false;
   });
 
   ui.reset.on("click", function(ev) {
-    resetProviders();
+    if (window.confirm("Remove and reset all?")) {
+      resetProviders();
+    }
     return false;
   });
 
@@ -164,21 +169,12 @@ $(function() {
   });
 
   function resetProviders() {
-    if (!window.confirm("Remove and reset all?")) {
-      return;
-    }
-    userdata.providers = providers.defaults;
+    userdata.providers = providers.defaults.slice();
     uiProviders();
     userdata.save();
   }
 
   function removeProvider(id) {
-    var provider = providers[id];
-    if (provider) {
-      if (!window.confirm("Remove '" + provider.title + "'?")) {
-        return;
-      }
-    }
     var i = userdata.providers.indexOf(id);
     (i >= 0) && userdata.providers.splice(i, 1);
     uiProviders();
@@ -197,7 +193,7 @@ $(function() {
     userdata.save();
   }
 
-  function updateFirst(yes) {
+  function setFirst(yes) {
     userdata.first = yes;
     uiFirst();
     userdata.save();

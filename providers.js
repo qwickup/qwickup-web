@@ -40,7 +40,7 @@ var providers = {
   },
   '11' : {
     title : 'WordNet',
-    lookup_url : 'http://wordnetweb.princeton.edu/perl/webwn?s={{query}}',
+    lookup_url : 'http://dict.qwickup.com/wordnet/q={{query}}',
     tags : 'en'
   },
   '31' : {

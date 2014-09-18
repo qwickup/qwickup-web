@@ -174,5 +174,10 @@ var providers = {
     title : 'Treccani',
     lookup_url : 'http://www.treccani.it/vocabolario/tag/{{query}}/',
     tags : 'it'
+  },
+  '60' : {
+    title : 'COBUILD',
+    lookup_url : 'http://www.collinsdictionary.com/dictionary/english-cobuild-learners/{{query}}/',
+    tags : 'en'
   }
 };

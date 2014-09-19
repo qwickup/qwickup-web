@@ -179,5 +179,10 @@ var providers = {
     title : 'COBUILD',
     lookup_url : 'http://www.collinsdictionary.com/dictionary/english-cobuild-learners/{{query}}/',
     tags : 'en'
+  },
+    '60' : {
+    title : 'Mnemonic',
+    lookup_url : 'http://mnemonicdictionary.com/?word={{query}}',
+    tags : 'en'
   }
 };
